@@ -76,9 +76,14 @@ class Task(models.Model):
     end_time = models.DateTimeField(null=True)
     # Task status, pending, active, paused, complete
     status = models.CharField(max_length=255)
+    # User selected task mode, 普通, 学生, 尝试, etc
+    mode = models.CharField(max_length=255)
 
-    task_coefficient = models.DecimalField()
-    task_balance = models.DecimalField()
+    guaranty = models.DecimalField()
+    down_payment = models.DecimalField()
+
+    coefficient = models.DecimalField()
+    balance = models.DecimalField()
     description = models.TextField()
 
     class Meta:

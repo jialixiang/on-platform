@@ -3,7 +3,7 @@ from ..base import Task, TaskRecord
 
 class RunningTask(Task):
     """ Model for running task
-        User needs to set running duration days and distance as 
+        User needs to set running duration days and distance as
         objective
     """
     duration_days = models.IntegerField(null=False)

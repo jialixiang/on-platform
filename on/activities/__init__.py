@@ -1,1 +1,1 @@
-from running import RunningTask, RunningTaskRecord
+from running.models import RunningTask, RunningTaskRecord
