@@ -34,14 +34,14 @@ class OnUser(models.Model):
     language = models.CharField(max_length=255)
     # Profile photo URL. The last number in the URL shows the size of the square image, which can be 0 (640*640), 46, 64, 96 and 132. This parameter is null if the user hasn't set a profile photo
     # e.g.: "http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0"
-    headimgurl = models.CharField(validators=[URLValidator()])
+    headimgurl = models.CharField(max_length=300, validators=[URLValidator()])
 
     # ================== For On Platform ==================
-    deposit = models.DecimalField()
-    points = models.DecimalField()
-    balance = models.DecimalField()
+    deposit = models.DecimalField(max_digits=12, decimal_places=2)
+    points = models.DecimalField(max_digits=12, decimal_places=2)
+    balance = models.DecimalField(max_digits=12, decimal_places=2)
     # For Virtual Currencies, such as bitcoin, 图币
-    virtual_balance = models.DecimalField()
+    virtual_balance = models.DecimalField(max_digits=12, decimal_places=2)
     remark = models.TextField()
 
 
@@ -57,7 +57,7 @@ class Activity(models.Model):
     # Activity status, pending, active, paused, complete
     status = models.CharField(max_length=255)
 
-    coefficient = models.DecimalField()
+    coefficient = models.DecimalField(max_digits=12, decimal_places=2)
     active_participants = models.IntegerField(default=0)
     max_participants = models.IntegerField(default=0)
     description = models.TextField()
@@ -69,6 +69,7 @@ class Task(models.Model):
 
         Detailed objectives will be defined in each specific task
     """
+    task_id = models.IntegerField(primary_key=True)
     user = models.ForeignKey(OnUser, related_name="tasks", on_delete=models.PROTECT)
     activity = models.ForeignKey(Activity, related_name="tasks", on_delete=models.PROTECT)
 
@@ -79,11 +80,11 @@ class Task(models.Model):
     # User selected task mode, 普通, 学生, 尝试, etc
     mode = models.CharField(max_length=255)
 
-    guaranty = models.DecimalField()
-    down_payment = models.DecimalField()
+    guaranty = models.DecimalField(max_digits=12, decimal_places=2)
+    down_payment = models.DecimalField(max_digits=12, decimal_places=2)
 
-    coefficient = models.DecimalField()
-    balance = models.DecimalField()
+    coefficient = models.DecimalField(max_digits=12, decimal_places=2)
+    balance = models.DecimalField(max_digits=12, decimal_places=2)
     description = models.TextField()
 
     class Meta:
@@ -96,12 +97,11 @@ class TaskRecord(models.Model):
 
         Details will be defined in each specific task record
     """
-    task = models.ForeignKey(Task, related_name="records", on_delete=models.PROTECT)
     # Time when user creates the record
     record_time = models.DateTimeField(null=False)
 
     # Bonus can be -/+, depends on user complete the task or not
-    bonus = models.DecimalField()
+    bonus = models.DecimalField(max_digits=12, decimal_places=2)
 
     class Meta:
         abstract = True

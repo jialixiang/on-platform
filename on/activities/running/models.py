@@ -1,4 +1,6 @@
-from ..base import Task, TaskRecord
+from django.db import models
+
+from ...base import Task, TaskRecord
 
 
 class RunningTask(Task):
@@ -14,6 +16,8 @@ class RunningTaskRecord(TaskRecord):
     """ Model for running task record
         To save user's actual running distance per day
     """
+    task = models.ForeignKey(RunningTask, related_name="records", on_delete=models.PROTECT)
+
     distance = models.FloatField(default=0)
     # A screenshot image to show current running distance
     voucher = models.ImageField(blank=True)
