@@ -1,0 +1,28 @@
+<table border="1">
+  <tr>
+    <td>活动ID</td>
+    <td>活动名称</td>
+    <td>开始时间</td>
+    <td>结束时间</td>
+    <td>活动状态</td>
+    <td>系数</td>
+    <td>目前人数</td>
+    <td>人数上限</td>
+    <td>图标</td>
+    <td>活动详情</td>
+  </tr>
+	{% for a in activities %}
+    <tr>
+      <td>{{ a.activity_id }}</td>
+      <td>{{ a.name }}</td>
+      <td>{{ a.start_time }}</td>
+      <td>{{ a.end_time }}</td>
+      <td>{{ a.status }}</td>
+      <td>{{ a.coefficient }}</td>
+      <td>{{ a.active_participants }}</td>
+      <td>{{ a.max_participants }}</td>
+      <td><img src="{{ a.logoimgurl }}"></td>
+      <td>{{ a.description  }}</td>
+    </tr>
+  {% endfor %}
+</table>

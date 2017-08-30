@@ -61,6 +61,9 @@ class Activity(models.Model):
     coefficient = models.DecimalField(max_digits=12, decimal_places=2)
     active_participants = models.IntegerField(default=0)
     max_participants = models.IntegerField(default=0)
+
+    # Each activity has its own logo
+    logoimgurl = models.CharField(max_length=300, validators=[URLValidator()])
     description = models.TextField()
 
 
