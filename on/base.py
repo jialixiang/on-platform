@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import uuid
 from django.db import models
 from django.core.validators import URLValidator
 
@@ -49,7 +50,7 @@ class Activity(models.Model):
     """ Model for Activities within On! Platform, such as Running, Sleeping, etc
         Activity is composed of several users' tasks
     """
-    activity_id = models.IntegerField(primary_key=True)
+    activity_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
 
     start_time = models.DateTimeField(null=False)
@@ -69,7 +70,7 @@ class Task(models.Model):
 
         Detailed objectives will be defined in each specific task
     """
-    task_id = models.IntegerField(primary_key=True)
+    task_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(OnUser, related_name="tasks", on_delete=models.PROTECT)
     activity = models.ForeignKey(Activity, related_name="tasks", on_delete=models.PROTECT)
 
