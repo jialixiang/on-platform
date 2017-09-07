@@ -1,5 +1,9 @@
 Django==1.11.4
 
+djangorestframework==3.6.4
+django-filter==1.0.4
+Markdown==2.6.9
+
 Pillow==4.2.1
 psycopg2==2.7.3
 python-dateutil==2.6.1
