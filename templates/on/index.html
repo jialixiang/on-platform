@@ -13,7 +13,7 @@
   </tr>
 	{% for a in activities %}
     <tr>
-      <td>{{ a.activity_id }}</td>
+      <td><a href='activities/{{ a.activity_id }}'>{{ a.activity_id }}</a></td>
       <td>{{ a.name }}</td>
       <td>{{ a.start_time }}</td>
       <td>{{ a.end_time }}</td>

@@ -38,8 +38,11 @@ class OnUser(models.Model):
     headimgurl = models.CharField(max_length=300, validators=[URLValidator()])
 
     # ================== For On Platform ==================
+    # 活动押金
     deposit = models.DecimalField(max_digits=12, decimal_places=2)
+    # 活动积分
     points = models.DecimalField(max_digits=12, decimal_places=2)
+    # 余额
     balance = models.DecimalField(max_digits=12, decimal_places=2)
     # For Virtual Currencies, such as bitcoin, 图币
     virtual_balance = models.DecimalField(max_digits=12, decimal_places=2)

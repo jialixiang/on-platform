@@ -1,6 +1,12 @@
 from rest_framework import serializers
 
-from .models import Activity, Task, TaskRecord
+from .models import OnUser, Activity, Task, TaskRecord
+
+
+class OnUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OnUser
+        fields = '__all__'
 
 
 class ActivitySerializer(serializers.ModelSerializer):
@@ -9,13 +15,13 @@ class ActivitySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TaskSerializer(serializers.ModelSerializer):
+class RunningTaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = '__all__'
 
 
-class TaskRecordSerializer(serializers.ModelSerializer):
+class RunningTaskRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = TaskRecord
         fields = '__all__'

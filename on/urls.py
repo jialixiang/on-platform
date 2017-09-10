@@ -10,8 +10,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', views.show_activities, name='Home'),
-    url(r'^activities/$', views.ActivityList.as_view(), name='ActivityList'),
-    url(r'^activities/(?P<activity_id>[0-9a-f-]+)/$', views.ActivityDetail.as_view(), name='ActivityDetail'),
+
+    url(r'^users/$', views.OnUserList.as_view(), name='activity_list'),
+
+    url(r'^activities/$', views.ActivityList.as_view(), name='activity_list'),
+    url(r'^activities/(?P<pk>[0-9a-f-]+)/$', views.ActivityDetail.as_view(), name='activity_detail'),
+
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

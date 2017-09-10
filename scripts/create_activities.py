@@ -51,11 +51,20 @@ if __name__ == '__main__':
 
     for activity_data in activities:
 
+        print('Creating activity - %s, %s' % (activity_data['name'], activity_data['start_time']))
+
         # Parse datetime string to Django DateTimeField
         for time_field in ['start_time', 'end_time']:
             if activity_data[time_field]:
                 activity_data[time_field] = dateutil.parser.parse(activity_data[time_field])
 
-        # TODO: Check if activity already exists
+        # Check if activity already exists
+        if Activity.objects.filter(
+            name = activity_data['name'],
+            start_time = activity_data['start_time']
+        ).exists():
+            print('\tActivity existing, skipped...')
+            continue
+
         a = Activity(**activity_data)
         a.save()
