@@ -87,9 +87,12 @@ class Task(models.Model):
     # User selected task mode, 普通, 学生, 尝试, etc
     mode = models.CharField(max_length=255)
 
+    # 保证金
     guaranty = models.DecimalField(max_digits=12, decimal_places=2)
+    # 底金
     down_payment = models.DecimalField(max_digits=12, decimal_places=2)
 
+    # 系数
     coefficient = models.DecimalField(max_digits=12, decimal_places=2)
     balance = models.DecimalField(max_digits=12, decimal_places=2)
     description = models.TextField()
