@@ -1,11 +1,20 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 
-from .models import OnUser, Activity, Task, TaskRecord
+from .models import Profile, Activity
+from .models import RunningTask, RunningTaskRecord
 
 
-class OnUserSerializer(serializers.ModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = OnUser
+        model = Profile
+        fields = '__all__'
+
+
+class UserSerializer(serializers.ModelSerializer):
+    profile = ProfileSerializer(many=False, read_only=True)
+    class Meta:
+        model = User
         fields = '__all__'
 
 
@@ -17,11 +26,11 @@ class ActivitySerializer(serializers.ModelSerializer):
 
 class RunningTaskSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Task
+        model = RunningTask
         fields = '__all__'
 
 
 class RunningTaskRecordSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TaskRecord
+        model = RunningTaskRecord
         fields = '__all__'

@@ -1,20 +1,28 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 
 from rest_framework import status
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import OnUser, Activity, Task, TaskRecord
-from .serializers import OnUserSerializer, ActivitySerializer
+from .models import Activity, Task, TaskRecord
+from .serializers import UserSerializer, ActivitySerializer
 from .serializers import RunningTaskSerializer, RunningTaskRecordSerializer
 
 
-class OnUserList(generics.ListCreateAPIView):
+class UserList(generics.ListCreateAPIView):
     """ List all users, or create a new user"""
-    queryset = OnUser.objects.all()
-    serializer_class = OnUserSerializer
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    """ Retrieve, update or delete a user """
+    # TODO: need to set admin permission only for PUT/DELETE
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class ActivityList(generics.ListCreateAPIView):
@@ -29,6 +37,14 @@ class ActivityDetail(generics.RetrieveUpdateDestroyAPIView):
     # TODO: need to set admin permission only for PUT/DELETE
     queryset = Activity.objects.all()
     serializer_class = ActivitySerializer
+
+
+##############################################################
+
+
+def login(request):
+    print request
+    return redirect('home')
 
 
 def show_activities(request):

@@ -9,8 +9,8 @@ import dateutil.parser
 import django
 django.setup()
 
-from on.models import OnUser, Activity
-from on.models import RunningTask, RunningTaskRecord
+from django.contrib.auth.models import User
+from on.models import Activity, RunningTask, RunningTaskRecord
 
 task_records = [
     {
@@ -30,7 +30,7 @@ task_records = [
 
 if __name__ == '__main__':
 
-    user = OnUser.objects.get(openid='o6_bmjrPTlm6_2sgVt7hMZOPfL2M')
+    user = User.objects.get(profile__openid='o6_bmjrPTlm6_2sgVt7hMZOPfL2M')
     activity = Activity.objects.get(activity_id='8a171008-c03d-4eb3-81e6-89790363f08b')
 
     task_data = {

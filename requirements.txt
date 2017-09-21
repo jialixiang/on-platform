@@ -6,4 +6,5 @@ Markdown==2.6.9
 
 Pillow==4.2.1
 psycopg2==2.7.3
+requests==2.18.4
 python-dateutil==2.6.1

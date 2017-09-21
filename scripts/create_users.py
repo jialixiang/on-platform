@@ -7,9 +7,10 @@
 import django
 django.setup()
 
-from on.base import OnUser
+from on.user import Profile
+from django.contrib.auth.models import User
 
-users = [
+profiles = [
     {
         'openid': 'o6_bmjrPTlm6_2sgVt7hMZOPfL2M',
         'nickname': 'test',
@@ -49,12 +50,18 @@ users = [
 
 if __name__ == '__main__':
 
-    for user_data in users:
-        print('Cresting user - %s' % user_data['openid'])
+    for profile_data in profiles:
+        # Skip if no openid
+        if not profile_data['openid']:
+            continue
+
+        print('Cresting user - %s' % profile_data['openid'])
         # Check if user already exists
-        if OnUser.objects.filter(openid=user_data['openid']).exists():
+        if User.objects.filter(profile__openid=profile_data['openid']).exists():
             print('\tUser existing, skipped...')
             continue
 
-        u = OnUser(**user_data)
-        u.save()
+        user = User(username = profile_data['openid'])
+        user.save()
+        user.profile.__dict__.update(**profile_data)
+        user.save()

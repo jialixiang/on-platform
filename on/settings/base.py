@@ -137,3 +137,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
+
+# On Platform
+AppID = 'wx4495e2082f63f8ac'
+AppSecret = '9be94a9ade944fb3ecca0717432c81a7'
