@@ -7,6 +7,8 @@
 import dateutil.parser
 
 import django
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 django.setup()
 
 from django.contrib.auth.models import User
@@ -31,7 +33,7 @@ task_records = [
 if __name__ == '__main__':
 
     user = User.objects.get(profile__openid='o6_bmjrPTlm6_2sgVt7hMZOPfL2M')
-    activity = Activity.objects.get(activity_id='8a171008-c03d-4eb3-81e6-89790363f08b')
+    activity = Activity.objects.get(name='在线阅读')
 
     task_data = {
         'start_time': '2017-09-01 00:00:00',
@@ -58,7 +60,7 @@ if __name__ == '__main__':
             activity = activity,
             start_time = task_data['start_time'],
         )
-    except RunningTask.DoesNotExist, e:
+    except (RunningTask.DoesNotExist):
         print('Creating task - %s, %s, %s' % (user, activity, task_data['start_time']))
         task = RunningTask(
             user = user,

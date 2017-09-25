@@ -5,6 +5,8 @@
 #
 
 import django
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 django.setup()
 
 from on.user import Profile
@@ -49,6 +51,7 @@ profiles = [
 
 
 if __name__ == '__main__':
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 
     for profile_data in profiles:
         # Skip if no openid

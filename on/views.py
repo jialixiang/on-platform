@@ -43,7 +43,7 @@ class ActivityDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 def login(request):
-    print request
+    print(request)
     return redirect('home')
 
 
