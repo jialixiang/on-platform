@@ -97,6 +97,7 @@
     position: absolute;
     left: 0px;
     top: -3px;
+    color: black;
     vertical-align: middle;
     margin: auto;
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.004);
