@@ -1,0 +1,97 @@
+* {
+  font-family: "Helvetica Neue","Helvetica","Arial","PingFang SC","Hiragino Sans GB", "Microsoft YaHei","WenQuanYi Micro Hei", sans-serif;
+}
+.bottom-absolute-part{
+	position: fixed;
+	bottom: 0px;
+}
+.swiper-container {
+    width: 100%;
+}
+.swiper-container img {
+    display: block;
+    width: 100%;
+}
+.weui-tabbar p{
+    margin: 0px;
+}
+.weui-tabbar a{
+    text-decoration: none;
+}
+
+.top-pannel {
+  padding-bottom: 60px;
+}
+
+.weui-tabbar{
+  position: fixed;
+}
+
+.target-header{
+    padding-left: 20%;
+    padding-right: 20%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.target-title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    background: white;
+    text-align: center;
+    color: #212122;
+}
+
+.target-icon{
+    height: 70%;
+}
+.target-icon img{
+    height: 100%;
+}
+
+.target-list{
+    list-style: none;
+    border-bottom: 1px solid gray;
+}
+
+li.target-list-item:last-child{
+    border-bottom: 0px solid gray;
+}
+
+.target-list-item {
+    height: 4rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid silver;
+}
+
+.item-text{
+    margin-left:0.5rem;
+    font-size: 0.9rem;
+}
+
+.item-status{
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.status-text{
+    font-size: 0.7rem;
+}
+.status-icon{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
