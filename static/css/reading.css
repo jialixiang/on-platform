@@ -1,0 +1,48 @@
+html, body{
+    height: 100%;
+}
+
+.reading-header{
+    background-size: 100% 50%; 
+    width: 100%;
+}
+
+.reading-header .mdl-card__title{
+    height: 240px;
+    color: white; 
+    background: url(../images/books.jpg) center / cover;  
+}
+.mdl-card__supporting-text span{
+    font-size: 0.5rem;
+    line-height: 1rem;
+}
+
+.mdl-card__supporting-text {
+    padding:16px 5px;
+    width: 95%;
+}
+
+.row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.coloum-space{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 5px;
+}
+
+.mdl-card__supporting-text .img-circle{
+    box-sizing: border-box;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+    border:1px solid #ddd;
+    width: 30%;
+    margin-top: 2px;
+}

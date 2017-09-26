@@ -1,0 +1,218 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.reading-header{
+    background-size: 100% 50%; 
+    width: 100%;
+}
+
+.reading-header .mdl-card__title{
+    height: 240px;
+    color: white; 
+    background: url(../images/run_tubar.jpg) center / cover;  
+}
+
+#night-setting-btn{
+    width: 100%;
+}
+
+.setting-list{
+    margin-top: 20px;
+    list-style: none;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #9E9E9E;
+}
+
+.setting-list li{
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.setting-list li span{
+    font-size: large;
+}
+
+.mdl-card__supporting-text span{
+    font-size: small;
+    margin-left: 0px;
+}
+
+.mdl-card__supporting-text {
+    padding:16px 0px;
+    width: 100%;
+}
+
+.row-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.coloum-space{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 5px;
+}
+
+.mdl-card__supporting-text .img-circle{
+    box-sizing: border-box;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+    border:1px solid #ddd;
+    width: 30%;
+    max-width: 56px;
+    margin-top: 2px;
+}
+
+.weui-uploader__input-box{
+    height: 30px;
+    width: 30px;
+    margin-bottom: 0px;
+}
+
+.weui-uploader__input-box::after{
+    width: 20px;
+}
+
+.weui-uploader__input-box::before{
+    height: 20px;
+}
+
+.news-list{
+    list-style: none;
+    background: #F5F5F5;
+}
+
+.news-list .news-item:last-child
+{
+    margin-bottom: 0px;
+}
+
+.new-item__content{
+    margin-top: 20px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+.news-item{
+    background: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 20px;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.news-item__bottom{
+    margin-bottom: 10px;
+}
+.news-item__header-img{
+    width: 15%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+    border:1px solid #ddd;
+}
+
+.news-pre{
+    height: 80px;
+    background: #EEEEEE;
+    color: #212121;
+    text-align: center;
+    font-size: 1.2rem;
+    vertical-align: center;
+    line-height: 80px;
+}
+.news-item__header-text{
+    margin-left: 10px;
+    font-size: 0.8rem;
+}
+
+ .news-item__tail-btn{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: center;
+     background: white;
+     border: 0px solid white;
+     color: #455A64;
+     text-align: center;
+ }
+ .news-item__tail-btn > span{
+     color: #455A64;
+ }
+ 
+ .news-item__content-img{
+     width:80%;
+     margin-top: 15px;
+     margin-bottom: 5px;
+     margin-left: 20px;
+ }
+.news-item__horzon{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background: #BDBDBD;
+}
+.news-item__split{
+    width: 1px;
+    background: #BDBDBD;
+}
+.news-item__tail-img__parise{
+    float: left;
+    background: url(../images/praise.png) center / cover;
+    height: 25px;
+    width: 25px;
+    border-color: white;
+}
+
+.new-items__tail-img__report{
+    float: left;
+    background: url(../images/report.png) center / cover;
+    height: 20px;
+    width: 20px;
+    border-color: white;
+}
+
+
+.news-item__tail-text{
+    float: left;
+    margin-left: 10px;
+}
+
+.clear{
+    clear:both;
+}
+
+.nofifish-color{
+    background-color: #ef5350;
+    color: white;
+}
+
+.uploading-color{
+    background-color: #FFBE00;
+    color: white;
+}
+
+.finish-color{
+    background-color: #04be02;
+    color: white;
+}
+
+.weui-uploader__input-box:after, .weui-uploader__input-box:before{
+    background: #90A4AE;
+}
+.weui-uploader__input{
+    border-color: #90A4AE;
+}
+.weui-uploader__input-box{
+    border-color: #90A4AE;
+}

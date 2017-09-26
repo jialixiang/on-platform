@@ -1,4 +1,4 @@
-from user import Profile
-from base import Activity, Task, TaskRecord
+from on.user import Profile
+from on.base import Activity, Task, TaskRecord
 
-from activities.running.models import RunningTask, RunningTaskRecord
+from on.activities.running.models import RunningTask, RunningTaskRecord

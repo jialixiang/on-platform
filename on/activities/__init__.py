@@ -1,1 +1,1 @@
-from running.models import RunningTask, RunningTaskRecord
+from on.activities.running.models import RunningTask, RunningTaskRecord

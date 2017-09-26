@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>On!主页</title>
+	<link rel="stylesheet" href="/static/css/weui.min.css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css" />
+	<link rel="stylesheet" href="/static/css/jquery-weui.min.css" />
+	<link rel="stylesheet" href="/static/css/index.css" />
+	<link rel="stylesheet" href="/static/css/share.css"/>
+</head>
+
+<body ontouchstart>
+	<!--整个页面-->
+	<div class="top-pannel">
+		<!--轮播图-->
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="/static/images/swiper-1.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/static/images/swiper-2.jpg" alt="">
+				</div>
+				<div class="swiper-slide">
+					<img src="/static/images/swiper-3.jpg" alt="">
+				</div>
+			</div>
+			<div class="swiper-pagination swiper-pagination-bullets">
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+				<span class="swiper-pagination-bullet"></span>
+			</div>
+		</div>
+		<!--标签页-->
+		<div class="tabpage-panel">
+			<div class="weui-tab">
+				<div class="weui-navbar">
+					<a class="weui-navbar__item weui-bar__item--on" href="#nav1">
+						热门
+					</a>
+					<a class="weui-navbar__item" href="#nav2">
+						习惯
+					</a>
+					<a class="weui-navbar__item" href="#nav3">
+						健身
+					</a>
+					<a class="weui-navbar__item" href="#nav4">
+						学习
+					</a>
+				</div>
+				<div class="weui-tab__bd">
+					<!--热门页面-->
+					<div id="nav1" class="weui-tab__bd-item weui-tab__bd-item--active">
+						<div class="container">
+							<div class="row row-eq-height">
+                                {% for app in activities %}
+								<div class="col-xs-6">
+									<div class="nav-card" href="#">
+										<div class="card-header">
+											<span class="card-stage"></span>
+											<div class="card-name">{{ app.name }}</div>
+											<img src="{{ app.logoimgurl }}">
+										</div>
+										<span class="card-progress">
+											<span class="card-tag red_background">奖金池:3000</span>
+											<span class="clearfix"></span>
+											<span class="card-tag">人数:{{ a.active_participants }}</span>
+										</span>
+									</div>
+								</div>
+                                  {% endfor %}
+							</div>
+						</div>
+					</div>
+					<!--跑步页面-->
+					<div id="nav2" class="weui-tab__bd-item">
+						<h1>页面二</h1>
+					</div>
+					<!--学习页面-->
+					<div id="nav3" class="weui-tab__bd-item">
+						<h1>页面三</h1>
+					</div>
+					<!--健身页面-->
+					<div id="nav4" class="weui-tab__bd-item">
+						<h1>页面四</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航栏, 使用微信风格-->
+		<div class="weui-tabbar">
+			<a href="/activity/index" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="/static/images/tabbar_flag.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">微众活动</p>
+			</a>
+			<a href="/target/index" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="/static/images/tabbar_star.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的目标</p>
+			</a>
+			<a href="/user/index" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="/static/images/tabbar_person.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">个人中心</p>
+			</a>
+		</div>
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/fastclick.js"></script>
+		<script>
+			// fast click binding
+			$(function () {
+				FastClick.attach(document.body);
+			});
+		</script>
+		<script type="text/javascript" src="/static/js/jquery-weui.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/static/js/material.min.js"></script>
+		<script type="text/javascript" src="/static/js/index.js"></script>
+		<script type='text/javascript' src='/static/js/swiper.min.js' charset='utf-8'></script>
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true,
+				loop: true,
+				autoplay: 3000,
+				teredSlides: true,
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				autoplayDisableOnInteraction: false
+			});
+		</script>
+</body>
+
+</html>

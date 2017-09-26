@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from .models import Profile, Activity
-from .models import RunningTask, RunningTaskRecord
+from on.models import Profile, Activity
+from on.models import RunningTask, RunningTaskRecord
 
 
 class ProfileSerializer(serializers.ModelSerializer):

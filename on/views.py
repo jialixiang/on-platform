@@ -43,12 +43,11 @@ class ActivityDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 def login(request):
-    print request
+    print(request)
     return redirect('home')
 
 
 def show_activities(request):
     activities = Activity.objects.all().order_by('start_time')
-    return render(request, 'on/index.html', {
-        'activities': activities
-    })
+    return render(request, 'on/activity/index.html', {
+        'activities': activities})
