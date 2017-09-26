@@ -5,10 +5,7 @@
 #
 
 import dateutil.parser
-import os
 import django
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 django.setup()
 
 from on.base import Activity

@@ -7,8 +7,6 @@
 import dateutil.parser
 
 import django
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 django.setup()
 
 from django.contrib.auth.models import User

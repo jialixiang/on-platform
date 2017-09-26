@@ -5,8 +5,6 @@
 #
 
 import django
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "on.settings")
 django.setup()
 
 from on.user import Profile
